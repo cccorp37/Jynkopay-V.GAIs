@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Jynkopay Elite Design System - Haute Couture Neo-Fintech */
+
+@layer base {
+  :root {
+    /* === MODE CLAIR PRESTIGIEUX (Élégance Blanche & Saphir) === */
+    --background: 220 33% 98%;
+    --foreground: 222 47% 11%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    
+    /* Primary: Cyber Cyan #00D2FF */
+    --primary: 191 100% 50%;
+    --primary-foreground: 228 59% 9%;
+    --primary-hover: 191 100% 45%;
+    
+    /* Royal Blue: #0047FF */
+    --gold: 223 100% 50%;
+    --gold-foreground: 0 0% 100%;
+    
+    /* Teal Emerald: #00E6A5 */
+    --cyan: 163 100% 45%;
+    --cyan-foreground: 228 59% 9%;
+    
+    /* Vibrant Magenta: #FF007A */
+    --magenta: 331 100% 50%;
+    --magenta-foreground: 0 0% 100%;
+    
+    /* Emerald: #10B981 */
+    --success: 160 84% 39%;
+    --success-foreground: 0 0% 100%;
+    
+    /* Amber Gold: #F59E0B */
+    --warning: 38 92% 50%;
+    --warning-foreground: 222 47% 11%;
+    
+    /* Crimson: #EF4444 */
+    --error: 350 89% 60%;
+    --error-foreground: 0 0% 100%;
+    
+    --secondary: 214 32% 93%;
+    --secondary-foreground: 222 47% 11%;
+    
+    --muted: 215 25% 94%;
+    --muted-foreground: 215 16% 47%;
+    
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+    
+    --destructive: 350 89% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --info: 191 100% 50%;
+    --info-foreground: 222 47% 11%;
+    
+    --border: 214 32% 90%;
+    --input: 214 32% 90%;
+    --ring: 191 100% 50%;
+    
+    --radius: 1.125rem;
+    
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 191 100% 50%;
+    --sidebar-primary-foreground: 228 59% 9%;
+    --sidebar-accent: 214 32% 95%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 214 32% 90%;
+    --sidebar-ring: 191 100% 50%;
+  }
+
+  .dark {
+    /* === MODE SOMBRE OBSIDIAN (Deep Space & Cyber Glow) === */
+    --background: 225 45% 4%;     /* #040711 */
+    --foreground: 210 40% 98%;
+    
+    --card: 224 45% 8%;           /* #0a1024 */
+    --card-foreground: 210 40% 98%;
+    
+    --popover: 224 45% 10%;
+    --popover-foreground: 210 40% 98%;
+    
+    --primary: 191 100% 50%;      /* #00D2FF */
+    --primary-foreground: 228 59% 9%;
+    
+    --secondary: 224 35% 13%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --muted: 224 40% 12%;
+    --muted-foreground: 215 20% 65%;
+    
+    --accent: 224 40% 14%;
+    --accent-foreground: 210 40% 98%;
+    
+    --destructive: 350 89% 60%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 223 35% 17%;        /* #1c2744 */
+    --input: 223 35% 17%;
+    --ring: 191 100% 50%;
+    
+    --sidebar-background: 225 45% 5%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 191 100% 50%;
+    --sidebar-primary-foreground: 228 59% 9%;
+    --sidebar-accent: 224 35% 12%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 223 35% 17%;
+    --sidebar-ring: 191 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-feature-settings: "cv11", "ss01", "ss02";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', 'Space Grotesk', system-ui, sans-serif;
+    letter-spacing: -0.025em;
+  }
+
+  .font-display {
+    font-family: 'Outfit', 'Space Grotesk', system-ui, sans-serif;
+  }
+
+  .font-mono-numbers {
+    font-family: 'JetBrains Mono', 'Space Grotesk', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer components {
+  /* Holographic glass card */
+  .glass-card {
+    @apply relative overflow-hidden rounded-2xl border transition-all duration-300;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-card:hover {
+    border-color: rgba(0, 210, 255, 0.3);
+    box-shadow: 0 16px 40px -10px rgba(0, 210, 255, 0.15);
+  }
+
+  .glass-pill {
+    @apply rounded-full border backdrop-blur-xl transition-all duration-300;
+    background: rgba(10, 16, 36, 0.6);
+    border-color: rgba(0, 210, 255, 0.2);
+  }
+
+  .light .glass-pill {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(0, 71, 255, 0.15);
+  }
+
+  /* Neon Glow Badges */
+  .badge-neon {
+    @apply inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider;
+    background: rgba(0, 210, 255, 0.1);
+    color: #00D2FF;
+    border: 1px solid rgba(0, 210, 255, 0.3);
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
+  }
+
+  .badge-emerald {
+    @apply inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider;
+    background: rgba(0, 230, 165, 0.1);
+    color: #00E6A5;
+    border: 1px solid rgba(0, 230, 165, 0.3);
+    box-shadow: 0 0 15px rgba(0, 230, 165, 0.2);
+  }
+}
+
+@layer utilities {
+  /* High Voltage Gradients */
+  .gradient-primary {
+    background: linear-gradient(135deg, #00D2FF 0%, #0047FF 100%);
+  }
+
+  .gradient-emerald {
+    background: linear-gradient(135deg, #00E6A5 0%, #00D2FF 100%);
+  }
+
+  .gradient-sunset {
+    background: linear-gradient(135deg, #FF007A 0%, #7928CA 100%);
+  }
+
+  .gradient-gold {
+    background: linear-gradient(135deg, #FFD700 0%, #FF8A00 100%);
+  }
+
+  .gradient-hero-luxe {
+    background: 
+      radial-gradient(circle at 50% 0%, rgba(0, 210, 255, 0.18) 0%, transparent 60%),
+      radial-gradient(circle at 85% 30%, rgba(0, 71, 255, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 15% 50%, rgba(0, 230, 165, 0.12) 0%, transparent 50%),
+      linear-gradient(180deg, #040711 0%, #080D21 50%, #040711 100%);
+  }
+
+  .gradient-card-dark {
+    background: linear-gradient(145deg, rgba(14, 22, 48, 0.8) 0%, rgba(8, 13, 30, 0.95) 100%);
+  }
+
+  /* Text Gradients */
+  .text-gradient-primary {
+    background: linear-gradient(135deg, #00D2FF 0%, #0070F3 50%, #0047FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #00E6A5 0%, #00D2FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-rainbow {
+    background: linear-gradient(135deg, #00D2FF 0%, #00E6A5 30%, #FFD700 70%, #FF007A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glow Shadows */
+  .shadow-glow-cyan {
+    box-shadow: 0 0 35px rgba(0, 210, 255, 0.35);
+  }
+
+  .shadow-glow-blue {
+    box-shadow: 0 0 35px rgba(0, 71, 255, 0.4);
+  }
+
+  .shadow-glow-emerald {
+    box-shadow: 0 0 35px rgba(0, 230, 165, 0.35);
+  }
+
+  .shadow-luxe-card {
+    box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.07);
+  }
+
+  /* Glass Effects */
+  .glass {
+    background: rgba(10, 16, 36, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 210, 255, 0.12);
+  }
+
+  .glass-light {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #040711;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 210, 255, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 210, 255, 0.6);
+}
+
+::selection {
+  background: rgba(0, 210, 255, 0.3);
+  color: #FFFFFF;
+}

@@ -1,0 +1,28 @@
+project_id = "yyznogdayyafwlamljlo"
+
+[functions.send-verification-email]
+verify_jwt = false
+
+[functions.sms-webhook-receive]
+verify_jwt = false
+
+[functions.sms-webhook-status]
+verify_jwt = false
+
+[functions.send-sms]
+verify_jwt = false
+
+[functions.sms-campaign]
+verify_jwt = false
+
+[functions.maplerad-customers]
+verify_jwt = false
+
+[functions.maplerad-cards]
+verify_jwt = false
+
+[functions.maplerad-transfers]
+verify_jwt = false
+
+[functions.maplerad-webhook]
+verify_jwt = false
